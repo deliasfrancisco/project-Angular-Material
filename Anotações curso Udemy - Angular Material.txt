@@ -1,0 +1,90 @@
+Sera utilizado a versão Angular Material - componentes de interface para o usuario criando scripts para auxilio
+
+Criação do programa - ng new deliasfrancisco-project --style=scss *criando um projeto com processador Saz*
+Adicionar o editor de interface - ng add @angular/material@6.0.1
+Atualizar alguns pacotes que necessite,
+
+primeiro componente
+em app.module adicionar import { MatToolbarModule} from '@angular/material'
+adicionar no imports - MatToolbarModule
+em app.html adicionar a tag do componente - <mat-toolbar color="primary">Angular - Deliasfrancisco </mat-toolbar>
+
+em app.module adicionar import { MatListModule} from '@angular/material';
+adicionar no imports  - MatListModule
+em app.html adicionar a tag do componente - <mat-list-item></mat-list-item>
+
+graphcool - conceitos basicos
+type system
+queries - usa para obter dados da nossa API (que fazem a função do get na leitura de informações)
+Subscription - PErmite ouvir mudanças em tempo real na API, nos notificando
+Schama - Define o 'esquema' da API, um conteiner com todas as queries e componetes
+
+descrver dados na nossa API(classes java script)
+
+type User {
+  id: ID! - tipo da variavel (ID é um tipo)
+  name: String! - A exclamação indica um preechimento obrigatorio do campo (não nulo)
+  email: String!
+  password: String1
+}
+
+queries - busca dados da API
+
+type Query {
+  allUsers: [User]!
+}
+
+{
+  query {
+    allUsers { - busca na query usuarios todos os nomes e emails
+      name
+      email
+      }
+    }
+}
+
+JOSN retornado
+{
+  "data": {
+    "allUsers":[ - Outro abrituto declarado com o mesmo nome do type system declarado(array)
+      {
+        "name": "Diego",
+         "email": "deliasfrancisco@gmail.com"  - retorna todas informações dos atributos selecionados
+       }
+   }
+}
+
+Muatation - nos permite criar,alterar e excluir dados
+Subsripitions - Permitem nos "inscrever" nos servidor para receber alterações em tempo real
+
+
+graphcool - É um self-hosted backend as a service (BaaS) baseado no Graphcool
+
+recursos:
+
+-Mapeamento de dados
+-Serverless Funcions
+-Relatime API com Graphcool Subscripions
+-Autenticação JWT
+-Sistemas de permissões 
+-Planos pagos e gratuitos
+-Varios teplates prontos (modulos )
+
+criar um novo projeto Graphicool - graphcool init "nome_do_projeto"
+
+sera criado um novo projeto, dentro de src em types.graphql dentro da classe é possivel alterar o nome da variaveis e o tipo
+
+OBS: sempre que for usar ferramentas da documentação é necessario importar o modulo pois ele que faz o import e export
+
+
+
+
+
+
+
+
+
+
+
+
+
